@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Moonlight Dancer",
+        "breed": "Flutter",
+        "color": "Blue & Silver",
+        "image": "https://example.com/pony1.png"
+    },
+    {
+        "name": "Golden Hooves",
+        "breed": "Earth",
+        "color": "Rose Gold",
+        "image": "https://example.com/pony2.png"
+    }
+]
