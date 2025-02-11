@@ -8,7 +8,7 @@
     {
         "name": "Golden Hooves",
         "breed": "Earth",
-        "color": "Rose Gold",
+        "type": "Rose Gold",
         "image": "https://example.com/pony2.png"
     }
 ]
