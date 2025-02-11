@@ -1,22 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const ponyContainer = document.getElementById('ponyContainer');
     const ponyForm = document.getElementById('ponyForm');
+    const ponyName = document.getElementById('ponyName');
+    const ponyBreed = document.getElementById('ponyBreed');
+    const ponyColor = document.getElementById('ponyColor');
+    const ponyImage = document.getElementById('ponyImage');
 
-    // Load ponies from local storage or fallback to default list
-    let ponies = JSON.parse(localStorage.getItem('ponies')) || [
-        {
-            "name": "Moonlight Dancer",
-            "breed": "Flutter",
-            "color": "Blue & Silver",
-            "image": "https://example.com/pony1.png"
-        },
-        {
-            "name": "Golden Hooves",
-            "breed": "Earth",
-            "color": "Rose Gold",
-            "image": "https://example.com/pony2.png"
-        }
-    ];
+    // Load ponies from local storage or fallback to an empty array
+    let ponies = JSON.parse(localStorage.getItem('ponies')) || [];
 
     function displayPonies() {
         ponyContainer.innerHTML = ''; // Clear before reloading
@@ -26,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ponyCard.innerHTML = `
                 <img src="${pony.image}" alt="${pony.name}">
                 <h3>${pony.name}</h3>
-                <p>Breed: ${pony.breed}</p>
-                <p>Color: ${pony.color}</p>
+                <p><strong>Breed:</strong> ${pony.breed}</p>
+                <p><strong>Color:</strong> ${pony.color}</p>
                 <button onclick="deletePony(${index})">Remove</button>
             `;
             ponyContainer.appendChild(ponyCard);
@@ -36,6 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle form submission
     ponyForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevent page refresh
 
-        const name = document.get
+        const name = ponyName.value.trim();
+        const breed = ponyBreed.value.trim();
+        const color = ponyColor.value.trim();
+        const image = ponyImage.value.trim();
+
+        if (name && breed && color && image) {
+            ponies.push({ name, breed, color, image });
+            localStorage.setItem('ponies', JSON.stringify(ponies)); // Save to local storage
+            displayPonies(); // Refresh the display
+            ponyForm.reset(); // Clear the form
+        } else {
+            alert("Please fill in all fields!");
+        }
+    });
+
+    // Function to delete a pony
+    window.deletePony = function(index) {
+        ponies.splice(index, 1);
+        localStorage.setItem('ponies', JSON.stringify(ponies)); // Update storage
+        displayPonies(); // Refresh display
+    };
+
+    displayPonies(); // Load ponies on page load
+});
