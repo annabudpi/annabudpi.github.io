@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>My Pony Collection</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f5f5f5; }
+        .pony-container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .pony-card { background: white; border-radius: 10px; box-shadow: 3px 3px 10px rgba(0,0,0,0.1); padding: 10px; margin: 10px; width: 200px; }
+        .pony-card img { width: 100%; border-radius: 5px; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is a simple site hosted on GitHub Pages.</p>
+    <h1>My Pony Collection</h1>
+    <div class="pony-container">
+        <div class="pony-card">
+            <img src="https://example.com/pony1.png" alt="Pony 1">
+            <h3>Pony Name</h3>
+            <p>Breed: Flutter</p>
+            <p>Color: Blue & Silver</p>
+        </div>
+        <div class="pony-card">
+            <img src="https://example.com/pony2.png" alt="Pony 2">
+            <h3>Pony Name 2</h3>
+            <p>Breed: Earth</p>
+            <p>Color: Rose Gold</p>
+        </div>
+    </div>
 </body>
 </html>
