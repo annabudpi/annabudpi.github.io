@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ponyColor = document.getElementById('ponyColor');
     const ponyImage = document.getElementById('ponyImage');
 
-    // Load ponies from local storage or fallback to an empty array
+    // Load ponies from local storage or set an empty array
     let ponies = JSON.parse(localStorage.getItem('ponies')) || [];
 
     function displayPonies() {
