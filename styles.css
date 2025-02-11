@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+.pony-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pony-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+.pony-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, button {
+    margin: 5px;
+    padding: 8px;
+}
