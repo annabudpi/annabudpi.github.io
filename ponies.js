@@ -9,7 +9,7 @@ fetch('ponies.json')
                 <img src="${pony.image}" alt="${pony.name}">
                 <h3>${pony.name}</h3>
                 <p>Breed: ${pony.breed}</p>
-                <p>Color: ${pony.color}</p>
+                <p>Color: ${pony.type}</p>
             `;
             container.appendChild(ponyCard);
         });
